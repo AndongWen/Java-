@@ -1,4 +1,6 @@
-public class ParamTest {
+package Chapter_4;
+
+public class ParamTest{
     public static void main(String[] args){
 //        不能修改基本数据类型得参数
         System.out.println("====尝试改变基本数据类型得参数====");
@@ -8,15 +10,19 @@ public class ParamTest {
 
 //        方法可以改变对象参数得状态
         System.out.println("====尝试改变对象参数得状态====");
-        Employee1[] staff = new Employee1[2];
-        staff[0] = new Employee1("wad", 13000);
+        Employee1[] staff = new Employee1[3];
+        staff[0] = new Employee1("wad");
         staff[1] = new Employee1("Anthony", 18000);
+        staff[2] = new Employee1();
         System.out.println("====加倍之前 薪水为：" + staff[0].getSalary());
         doubleSalary(staff[0]);
         System.out.println("====加倍之后 薪水为：" + staff[0].getSalary());
         System.out.println("====加倍之前 薪水为：" + staff[1].getSalary());
         doubleSalary(staff[1]);
         System.out.println("====加倍之后 薪水为：" + staff[1].getSalary());
+        System.out.println("====加倍之前 薪水为：" + staff[2].getSalary());
+        doubleSalary(staff[2]);
+        System.out.println("====加倍之后 薪水为：" + staff[2].getSalary());
 
 //        方法不能让一个对象参数引用另一个对象
         System.out.println("====尝试让一个对象参数引用另一个对象====");
@@ -49,10 +55,19 @@ public class ParamTest {
 class Employee1{
     private String name;
     private double salary;
-
+//    多个构造器，使用时可以重载
     public Employee1(String n, double s){
         name = n;
         salary = s;
+    }
+
+    public Employee1(String n){
+        name = n;
+        salary = 20000;
+    }
+//    调用另外一个构造器，可以减少公共构造器中得代码量
+    public Employee1(){
+        this("Black.J", 35000);
     }
 
     public String getName(){
