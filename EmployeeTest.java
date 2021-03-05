@@ -60,8 +60,8 @@ class Employee{
     public void raiseSalary(double byPercent){
         double raise = salary * byPercent / 100;
         salary += raise;
-        /*
-        this 指示隐式参数
+
+/*        this 指示隐式参数
         double raise = this.salary * byPercent / 100;
         this.salary += raise;*/
     }
