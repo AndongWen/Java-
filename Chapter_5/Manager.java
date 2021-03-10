@@ -16,4 +16,18 @@ public class Manager extends Employee {
         double baseSalary = super.getSalary();
         return baseSalary + bonus;
     }
+
+    public boolean equals(Object otherObject){
+        if (!super.equals(otherObject)) return false;
+        Manager other = (Manager) otherObject;
+        return bonus == other.bonus;
+    }
+
+    public int hashcode(){
+        return java.util.Objects.hash(super.hashCode(), bonus);
+    }
+
+    public String toString(){
+        return super.toSrting() + "[bonus=" + bonus;
+    }
 }
