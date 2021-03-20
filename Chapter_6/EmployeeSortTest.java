@@ -3,7 +3,7 @@ package Chapter_6;
 import java.util.*;
 
 public class EmployeeSortTest {
-    public static void main(String[] args[]){
+    public static void main(String[] args){
         Employee[] staff = new Employee[3];
 
         staff[0] = new Employee("wad", 13000);
